@@ -6,7 +6,22 @@ services:
   - docker
 
 script:
+  # - '[ "${TRAVIS_PULL_REQUEST_BRANCH}" = "" && "${TRAVIS_PULL_REQUEST}" = "false" ] && make deploy || make lint_the_things'
   - env
-# - '[ "${TRAVIS_BRANCH}" = "" && "${TRAVIS_PULL_REQUEST}" = "false" ] && make deploy || make lint_the_things'
+  - '[ "${TRAVIS_BRANCH}" = "master" && "${TRAVIS_PULL_REQUEST}" = "false" ] && make deploy || make lint_the_things'
 
 # https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
+
+
+# push directly to master:
+#TRAVIS_BRANCH = master
+# TRAVIS_PULL_REQUEST=false
+
+
+# push to feature branch:
+# TRAVIS_BRANCH=prs
+# TRAVIS_PULL_REQUEST=false
+
+# building pr:
+# TRAVIS_BRANCH=master
+# TRAVIS_PULL_REQUEST=3
