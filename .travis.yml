@@ -6,8 +6,8 @@ services:
   - docker
 
 script:
-  - ./build.sh
+  - make deploy
 
-addons:
-    apt:
-      update: true
+# addons:
+#     apt:
+#       update: true
