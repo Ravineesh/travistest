@@ -6,4 +6,4 @@ services:
   - docker
 
 script:
-- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && echo "Master!" || echo "PR!"'
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && echo "PR!" || echo "master!"'
