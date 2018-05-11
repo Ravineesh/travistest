@@ -1,4 +1,5 @@
 FROM alpine:latest
+# FROM ubuntu:latest
 
 WORKDIR /build
 
@@ -11,3 +12,5 @@ RUN pip3 install --upgrade pip
 RUN npm install -g markdownlint-cli
 
 WORKDIR /build
+
+RUN echo "$DOCKER_USERNAME"

@@ -23,7 +23,7 @@ HOST := $(shell hostname)
 
 deploy: s3_upload s3cachecontrol tag slackpost
 
-s3_upload: publish lint_the_things cleanbranches
+s3_upload: publish lint_the_things dockerpush cleanbranches
 	echo "Uploading to s3"
 	# don't upload if directory is dirty
 	# ./git-clean-dir.sh
@@ -59,5 +59,11 @@ cfinvalidate:
 
 s3cachecontrol:
 	echo "Cache control disabled until it's fixed"
+
+dockerpush: dockerbuild
+	docker tag $(DOCKER_IMAGE_NAME) pzelnip/$(DOCKER_IMAGE_NAME):latest
+	docker tag $(DOCKER_IMAGE_NAME) pzelnip/$(DOCKER_IMAGE_NAME):$(SHA)
+	docker push pzelnip/$(DOCKER_IMAGE_NAME):latest
+	docker push pzelnip/$(DOCKER_IMAGE_NAME):$(SHA)
 
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish s3_upload github
