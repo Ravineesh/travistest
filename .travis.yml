@@ -5,10 +5,5 @@ sudo: required
 services:
   - docker
 
-if: branch = master
-  script:
-    - make deploy
-
-if: not branch = master
-  script:
-    - make lint_the_things
+script:
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && echo "Master!" || echo "PR!"'
