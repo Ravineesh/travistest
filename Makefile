@@ -61,6 +61,7 @@ s3cachecontrol:
 	echo "Cache control disabled until it's fixed"
 
 dockerpush: dockerbuild
+	echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
 	docker tag $(DOCKER_IMAGE_NAME) pzelnip/$(DOCKER_IMAGE_NAME):latest
 	docker tag $(DOCKER_IMAGE_NAME) pzelnip/$(DOCKER_IMAGE_NAME):$(SHA)
 	docker push pzelnip/$(DOCKER_IMAGE_NAME):latest
