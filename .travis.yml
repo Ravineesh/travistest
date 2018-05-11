@@ -9,5 +9,3 @@ script:
 - '[ "${TRAVIS_BRANCH}" = "master" ] && make deploy || make lint_the_things'
 
 # https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
-
-# I want to shoot myself, this is so clunky
