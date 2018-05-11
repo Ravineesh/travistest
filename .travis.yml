@@ -6,8 +6,6 @@ services:
   - docker
 
 script:
-  - make deploy
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make deploy || make lint_the_things'
 
-# addons:
-#     apt:
-#       update: true
+# https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
