@@ -26,3 +26,8 @@ script:
 # building pr:
 # TRAVIS_BRANCH=master
 # TRAVIS_PULL_REQUEST=3
+
+notifications:
+  slack:
+    rooms:
+      - secure: "TSAhcDPk36YFQrRBmtLOrkToezFks9uuB0Y7XeU0En5VAkGMmsBNHz/95eWsnmignu7Tqte4i9gTEIvWA2UkF13RRiOQjeSIQtxkvVFDlzsimRfJ91RotXlI38T1kx8Yp/bQsLggtfAinjPq7GU2kfS3sWQxS5L3zkYpZB3O3r0fR5Cz81+W1sw+Wh13MZzFn5z8IYQQ0a+ahTQ/f/Kg43MkuvhNTcgqcu1MuCfyeTfcDusvLzYTXCQePSBVjPKefItwlk/cwrBrm2Ad4GOG6CW/yBDkR10oZQEQ0/mMC1I0JEGGTTqbk8k/HsuHOLLDa/f8EChA7OpxDe+ucn/vWRZYXofbGVheIrymv4I5iHfEqzGdX1CxTghpt8WpL6J20rm+4QeOAvSf2hQUpen2jjd89HyiGFH4eHM9M3PBQErONZY0nwlQS39eq3C1So/TRQNBluaL3UsyWC6JVbESva1F1wzHtpzQPjkndLoOeTslWK9vxEVLjxUu+Itl7Q9Gos88pqw2g+NhjxlLkkyWYjCS8A8mPcxSuaGNh+n07zsrZg+Bo5XHEC9LpCBPxS1nmvlQz6W9gk0nWavtVMFH09ZOm/Qd67y5Eq3T5oeluxsl82dpBjNN8CoVqulWJMQZ2B/T4uzJT5ck/u9SUpn7AatmUG3jVF9TtWfB5ReAkDY="
