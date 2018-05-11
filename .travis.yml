@@ -5,19 +5,7 @@ sudo: required
 services:
   - docker
 
-# script:
-# - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && echo "PR!" || echo "master!"'
+script:
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make lint_the_things || make deploy'
 
 # https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
-
-script:
-  - make lint_the_things
-
-after_success:
-  - echo "SUCCESS!"
-
-after_failure:
-  - echo "FAILURE!"
-
-deploy:
-  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && echo "Pull request, not deploying" || make deploy'
