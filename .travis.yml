@@ -5,9 +5,10 @@ sudo: required
 services:
   - docker
 
-script:
-  - make deploy
+if: branch = master
+  script:
+    - make deploy
 
-# addons:
-#     apt:
-#       update: true
+if: not branch = master
+  script:
+    - make lint_the_things
