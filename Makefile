@@ -21,7 +21,7 @@ HOST := $(shell hostname)
 
 
 
-deploy: s3_upload s3cachecontrol tag slackpost
+deploy: tag #s3_upload s3cachecontrol tag slackpost
 
 s3_upload: publish lint_the_things dockerpush cleanbranches
 	echo "Uploading to s3"
