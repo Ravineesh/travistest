@@ -38,9 +38,9 @@ tag:
 	echo "Git tagging"
 	git config --global user.email "travis@travis-ci.org"
 	git config --global user.name "Travis CI"
-	git remote add origin-pages https://${GH_TOKEN}@github.com/MVSE-outreach/resources.git > /dev/null 2>&1
+	git remote add travis https://${GH_TOKEN}@github.com/pzelnip/travistest
 	git tag "$(DEPLOY_TIME)_$(SHA)"
-	git push origin $(DEPLOY_TIME)_$(SHA)
+	git push travis $(DEPLOY_TIME)_$(SHA)
 
 lint_the_things: markdownlint pylint
 
