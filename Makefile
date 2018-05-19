@@ -16,7 +16,7 @@ DOCKER_IMAGE_NAME=travistest
 DOCKER_IMAGE_TAGS := $(shell docker images --format '{{.Repository}}:{{.Tag}}' | grep '$(DOCKER_IMAGE_NAME)')
 
 SHA := $(shell git rev-parse --short HEAD)
-DEPLOY_TIME := $(shell date -u +"%Y-%m-%dT%H-%M-%SZ_%s%3")
+DEPLOY_TIME := $(shell date -u +"%Y-%m-%dT%H-%M-%SZ_%s")
 HOST := $(shell hostname)
 
 
