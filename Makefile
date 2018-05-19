@@ -36,6 +36,8 @@ cleanbranches:
 
 tag:
 	echo "Git tagging"
+	git tag "$(DEPLOY_TIME)_$(SHA)"
+	git push origin $(DEPLOY_TIME)_$(SHA)
 
 lint_the_things: markdownlint pylint
 
