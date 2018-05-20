@@ -1,15 +1,9 @@
 language: bash
-sudo: required
-services:
-- docker
+
 script:
-- if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-  make deploy; else make lint_the_things; fi
+- make push
+
 notifications:
   email: false
   slack:
     secure: KKnxOgni+HKQC5A7w3xDJzqnpQ4CRdkI/FLyIeWZ0cwJSaYRkZf30Fs5b6hpdYZ+oej+Hn3dcSr/gwmdVSYmfIpfqtB1om51mMvPYrIa+k1CsNTszMkRvQkQHqWkIxklhpiI9P6/gucR/bhdYkzrPP5icA6bqFK155XvjrYZUj65xsuZG4KZrwPxBNNkVB9tMyFazP2kjGdADgauyaHi2wVUats6DAeKPlfP/8WmSCB7MsiANv0GlmR+qTjbaYmIZHmUU1VSxTyXmfAwgVoU/4zrc5ve5urfyv70nGme+qxDyHiY5sRl9xPmkMIuK/TK4N7q++n+wltKcuEyhfABfhG3T/mDyt5Sfa8ApSkLoWhcsxiYH3Kb9PKpjBMo5o3rG4KsGZP1BOYNQiPewkOeBkmeoIoF5/+qA0rUk+IIewC//4zhFh1J96PSQRFAlUB3Bl0vOo1jiJUshGt4tayvbrpipNSOxB4FsHLdVXHGCLFe79WLw1+OrKtSd4VUzcdfEbaawa58bd0Trlr8p1W9r1bB8PWReVaxbyLxk7h5NwAOut0LNK3IDwgQYIY5n4mbmnZQIoez7BUYmy4wXtGeajUfVc03+Ju/PFp6GMiydaoDEcAHkY5t/cnenuiOucAz1M0OtUHzyUxG/vOGvJkOp5v9ZfMrF53ZEvpyF+mbQ4I=
-
-env:
-  global:
-    - secure: QagY4+kuf4VIti8wg27MUaO0K4uKr5hGhE6j9U9Hbb4eHRi76bZh+XZKnyp10eJ6wwsDTz3/DEWnw6wGKNJ4FXvHqZFTx0RhhOwSBJkrkoL5TFfnqkwaTPVInynsLhDpopclNlWLhqevqPOki7UYzq+kDTU9qLUFGBhz658ZRZs9k8/EFdMYnPjsRe4ObCyZkQudeYzdI87PkeTskteKkElss+qVBjGA/LbxVooDFGwRWvjVaE1pBXAaiEQkmQAEbfzO9Fr6pLNOCxPyZCeFRwSxm/hhGBRWiXmCsyNIX4S5lzgtr6mGGnUxwDpHqYuAYw1/8wyErgHlX5Pk+AJg1LQ2B1u0MnT69m9rDrLFbAoA390dqxUOrFg1p7Vm5xdcrXqyYOMSfK4IeWdQTHMN7iYM6cmyZPb+htP/mJCekGSTOxBJ2YmXcZYGeHjB5qvtPm3j9MaljvAAtirBYkNPL53ohJtlUXiBWT9q3c5rxH96SYHuNd/c0aLNOsvK9jkffvsDW1YIrVScSXL9EFCnjWw/BsmNoVGto850D07lXAtkOp/wg0nO3QUDpfRjiHnlQuXyS5olnIzlJxYwBc7jMB/D9THgSGHnygopEVtTfHB1A9wjeSwqOchcJ2tkZorxtMCDjGKnWWGa7c/M9xBDz3k+4aBpsX34Ow1f8zneIwo=
