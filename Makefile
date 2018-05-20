@@ -8,4 +8,7 @@ push:
 	git tag "$(DEPLOY_TIME)_$(SHA)"
 	git push tokenremote $(DEPLOY_TIME)_$(SHA)
 
+test:
+	echo "Run the tests"
+
 .PHONY: push

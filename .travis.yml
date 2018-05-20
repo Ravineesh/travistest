@@ -1,9 +1,15 @@
 language: bash
 
 script:
-- make push
+- if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+  make push; else make test; fi
+
 
 notifications:
   email: false
   slack:
     secure: KKnxOgni+HKQC5A7w3xDJzqnpQ4CRdkI/FLyIeWZ0cwJSaYRkZf30Fs5b6hpdYZ+oej+Hn3dcSr/gwmdVSYmfIpfqtB1om51mMvPYrIa+k1CsNTszMkRvQkQHqWkIxklhpiI9P6/gucR/bhdYkzrPP5icA6bqFK155XvjrYZUj65xsuZG4KZrwPxBNNkVB9tMyFazP2kjGdADgauyaHi2wVUats6DAeKPlfP/8WmSCB7MsiANv0GlmR+qTjbaYmIZHmUU1VSxTyXmfAwgVoU/4zrc5ve5urfyv70nGme+qxDyHiY5sRl9xPmkMIuK/TK4N7q++n+wltKcuEyhfABfhG3T/mDyt5Sfa8ApSkLoWhcsxiYH3Kb9PKpjBMo5o3rG4KsGZP1BOYNQiPewkOeBkmeoIoF5/+qA0rUk+IIewC//4zhFh1J96PSQRFAlUB3Bl0vOo1jiJUshGt4tayvbrpipNSOxB4FsHLdVXHGCLFe79WLw1+OrKtSd4VUzcdfEbaawa58bd0Trlr8p1W9r1bB8PWReVaxbyLxk7h5NwAOut0LNK3IDwgQYIY5n4mbmnZQIoez7BUYmy4wXtGeajUfVc03+Ju/PFp6GMiydaoDEcAHkY5t/cnenuiOucAz1M0OtUHzyUxG/vOGvJkOp5v9ZfMrF53ZEvpyF+mbQ4I=
+
+env:
+  global:
+    - secure: "mBLrQ+syXM91As74knFW5au9lmkcWoeLQsUaj9Z62M8GrMKD+ahMsyu9QVkrOKlT/useYycA1MMHA69QXTSWBhQMYRF58M+MjwYSDmlo+TJ34NfJXc5EHBBvyQd5eyfiAMUHR0+57mJEq6nLkQdHdXfB7CHCbHCGO8J3LJSy7yvEq61rIr2CyUhJ+r6C4BxlQp6x/3bWtCz5+nC1LHHFLO32fDFfkIpm2P6RcMFZ/IDcOIW+rl/OeH5gR6Bqt3d6HQkqWwNLWwoODeLLacZB8sbWp5eqhIIeYTl+ugky/od0fPYYqyFu+eo2zuDz6jwWcj70Tf9B4y2bxY3z12oP/8aoG/BlC4WCsAHpwlI++qUAKAhxu3ktMXDNUP7weRgCdTPbZUHXs+d4tZcV5Xe9nI8LwsP/tVNjmj2sYf1qxAUMNEetyIofNfMh3Bpqdqpvh3hEKv4yDYPHICnh3qDr6M/O4K68uUZa8OZ1GuYXVst3UQ04iTGf2bqejRnApnikmh0BaINwzvSvZcLKCMYbuFF+EvR9dYd2D8sUiVvlaHiqWlmLgErxkjYrR9wjz7L4CWV+UUZ+kVL0GMiWUTeSzcdgIgNeO/no+njy1ykCcthZZKGMcUM6XRnGDBil5f9isvqJgDQVhqyWA5ucFMbg6XPMPVHmcON2mHdFpc2SIEA="
